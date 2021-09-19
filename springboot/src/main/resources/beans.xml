@@ -4,12 +4,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <!--    Spring配置方式-->
-    <bean id="user01" class="com.linbo.boot.bean.User">
+    <bean id="haha" class="com.linbo.boot.bean.User">
         <property name="name" value="zs"></property>
         <property name="age" value="18"></property>
     </bean>
 
-    <bean id="cat" class="com.linbo.boot.bean.Pet">
+    <bean id="hehe" class="com.linbo.boot.bean.Pet">
         <property name="name" value="tomcat"></property>
     </bean>
 
