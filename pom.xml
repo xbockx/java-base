@@ -7,6 +7,9 @@
     <groupId>com.linbo</groupId>
     <artifactId>base</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>myspring</module>
+    </modules>
     <packaging>pom</packaging>
 
     

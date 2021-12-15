@@ -23,10 +23,10 @@ public class MainApplication {
         ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);
 
         // 打印所有组件名
-        String[] beanDefinitionNames = run.getBeanDefinitionNames();
-        for (String name : beanDefinitionNames) {
-            System.out.println(name);
-        }
+//        String[] beanDefinitionNames = run.getBeanDefinitionNames();
+//        for (String name : beanDefinitionNames) {
+//            System.out.println(name);
+//        }
 
 //        // 从容器中获取组件
 //        Pet t1 = run.getBean("myTom", Pet.class);
@@ -56,15 +56,15 @@ public class MainApplication {
 //        DBHelper bean1 = run.getBean(DBHelper.class);
 //        System.out.println(bean1);
 
-        boolean myTom = run.containsBean("myTom");
-        System.out.println("容器中存在myTom: " + myTom);
-        boolean myUser = run.containsBean("myUser");
-        System.out.println("容器中存在myUser: " + myUser);
-
-        boolean haha = run.containsBean("haha");
-        boolean hehe = run.containsBean("hehe");
-        System.out.println("haha: " + haha);
-        System.out.println("hehe: " + hehe);
+//        boolean myTom = run.containsBean("myTom");
+//        System.out.println("容器中存在myTom: " + myTom);
+//        boolean myUser = run.containsBean("myUser");
+//        System.out.println("容器中存在myUser: " + myUser);
+//
+//        boolean haha = run.containsBean("haha");
+//        boolean hehe = run.containsBean("hehe");
+//        System.out.println("haha: " + haha);
+//        System.out.println("hehe: " + hehe);
     }
 }
 
