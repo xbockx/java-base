@@ -1,5 +1,7 @@
 package com.linbo.boot.bean;
 
+import lombok.AllArgsConstructor;
+
 public class Pet {
 
     private String name;
