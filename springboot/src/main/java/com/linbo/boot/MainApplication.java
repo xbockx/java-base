@@ -4,10 +4,15 @@ import ch.qos.logback.core.db.DBHelper;
 import com.linbo.boot.bean.Pet;
 import com.linbo.boot.bean.User;
 import com.linbo.boot.config.MyConfig;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.support.DefaultSingletonBeanRegistry;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+
+import java.lang.reflect.Field;
+import java.util.Map;
 
 /**
  * 这是一个Spring Boot应用
@@ -18,10 +23,20 @@ import org.springframework.context.annotation.ComponentScan;
 //@ComponentScan("com.linbo")       // 方式二
 @SpringBootApplication
 public class MainApplication {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
+        // Ctrl + Alt + U: 类图
         // 返回所有IoC容器
         ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);
 
+        final Field singletonObjects = DefaultSingletonBeanRegistry.class.getDeclaredField("singletonObjects");
+        singletonObjects.setAccessible(true);
+        final ConfigurableListableBeanFactory beanFactory = run.getBeanFactory();
+        Map<String, Object> map = (Map<String, Object>) singletonObjects.get(beanFactory);
+        map.forEach((key, value) -> System.out.println(key + " - " + value));
+
+    }
+
+    public void springboot() {
         // 打印所有组件名
 //        String[] beanDefinitionNames = run.getBeanDefinitionNames();
 //        for (String name : beanDefinitionNames) {

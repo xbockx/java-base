@@ -25,9 +25,9 @@ public class JwtUtilTest {
                 Role.builder()
                         .authority("ROLE_ADMIN")
                         .build());
-        User.builder()
-                .name(username)
-                .a.build();
+//        User.builder()
+//                .name(username)
+//                .a.build();
     }
 
 }
