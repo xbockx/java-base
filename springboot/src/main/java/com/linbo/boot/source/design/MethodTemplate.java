@@ -1,4 +1,4 @@
-package com.linbo.boot.design;
+package com.linbo.boot.source.design;
 
 import lombok.extern.slf4j.Slf4j;
 
